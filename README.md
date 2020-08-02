@@ -1,9 +1,9 @@
 # FiveM-Bot
 FiveM Discord Bot
 
-##Opsætning
+## Opsætning
 
-###Version
+### Version
 
 Ja, botten kører på 11.5.1 og er for doven til at skulle lave den om til v12. Når de dræber 11.5.1 skal jeg nok opdatere den, ellers må i selv lette røven og gøre det :D
 
@@ -25,7 +25,7 @@ npm i moment
 npm i common-tags
 ```
 
-###Botconfig
+### Botconfig
 
 | config | funktion |
 | ------ | ------ |
