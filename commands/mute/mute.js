@@ -5,7 +5,7 @@ module.exports = {
     name: "mute",
     category: "mute",
     description: "Muter en person på discorden",
-    run: async(bot, message, args, Discord, con) => {
+    run: async(bot, message, args, Discord, Collection) => {
 
         let mutereason = args.slice(2).join(" ")
         if (!mutereason) return message.reply(`du skal angive en grund!`)
@@ -68,3 +68,12 @@ module.exports = {
         
     }
 }
+
+// __  __           _        _              ____          _        _  _   _  _    ___  _  _     __  
+//|  \/  |         | |      | |            / __ \        (_)     _| || |_| || |  / _ \| || |   / /  
+//| \  / | __ _  __| | ___  | |__  _   _  | |  | |___ ___ _  ___|_  __  _| || |_| | | | || |_ / /_  
+//| |\/| |/ _` |/ _` |/ _ \ | '_ \| | | | | |  | / __/ __| |/ _ \_| || |_|__   _| | | |__   _| '_ \ 
+//| |  | | (_| | (_| |  __/ | |_) | |_| | | |__| \__ \__ \ |  __/_  __  _|  | | | |_| |  | | | (_) |
+//|_|  |_|\__,_|\__,_|\___| |_.__/ \__, |  \____/|___/___/_|\___| |_||_|    |_|  \___/   |_|  \___/ 
+//                                  __/ |                                                           
+//    

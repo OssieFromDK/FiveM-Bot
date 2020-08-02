@@ -1,4 +1,11 @@
-//Lavet af Ossie#0007
+// __  __           _        _              ____          _        _  _   _  _    ___  _  _     __  
+//|  \/  |         | |      | |            / __ \        (_)     _| || |_| || |  / _ \| || |   / /  
+//| \  / | __ _  __| | ___  | |__  _   _  | |  | |___ ___ _  ___|_  __  _| || |_| | | | || |_ / /_  
+//| |\/| |/ _` |/ _` |/ _ \ | '_ \| | | | | |  | / __/ __| |/ _ \_| || |_|__   _| | | |__   _| '_ \ 
+//| |  | | (_| | (_| |  __/ | |_) | |_| | | |__| \__ \__ \ |  __/_  __  _|  | | | |_| |  | | | (_) |
+//|_|  |_|\__,_|\__,_|\___| |_.__/ \__, |  \____/|___/___/_|\___| |_||_|    |_|  \___/   |_|  \___/ 
+//                                  __/ |                                                           
+//                                 |___/                                  
 
 const botconfig = require("./botconfig.json");
 const { Client, Collection } = require("discord.js");
@@ -114,6 +121,7 @@ bot.on("message", async message => {
 bot.on("guildMemberAdd", member => {
 
     member.send(`${botconfig.velkomstbesked}`);
+    member.addRole(r => r.id === botconfig.unverifiedroleid)
 
     const joined = moment(member.joinedAt, "unix").format("LTS")
     const created = moment(member.user.createdAt, "unix").format("L")
@@ -200,3 +208,12 @@ bot.on("messageUpdate", (oldMessage, newMessage) => {
 
 
 bot.login(botconfig.token)
+
+// __  __           _        _              ____          _        _  _   _  _    ___  _  _     __  
+//|  \/  |         | |      | |            / __ \        (_)     _| || |_| || |  / _ \| || |   / /  
+//| \  / | __ _  __| | ___  | |__  _   _  | |  | |___ ___ _  ___|_  __  _| || |_| | | | || |_ / /_  
+//| |\/| |/ _` |/ _` |/ _ \ | '_ \| | | | | |  | / __/ __| |/ _ \_| || |_|__   _| | | |__   _| '_ \ 
+//| |  | | (_| | (_| |  __/ | |_) | |_| | | |__| \__ \__ \ |  __/_  __  _|  | | | |_| |  | | | (_) |
+//|_|  |_|\__,_|\__,_|\___| |_.__/ \__, |  \____/|___/___/_|\___| |_||_|    |_|  \___/   |_|  \___/ 
+//                                  __/ |                                                           
+//    
