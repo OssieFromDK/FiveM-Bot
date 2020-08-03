@@ -1,0 +1,30 @@
+{
+  "name": "fivemdsbot",
+  "version": "1.0.0",
+  "description": "Fivem Discord bot med forskellige ting og commands til din discord :)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/OssieFromDK/FiveM-Bot/"
+  },
+  "keywords": [
+    "Dansk",
+    "Fivem",
+    "Discord",
+    "Discordbot"
+  ],
+  "author": "Ossie#4046",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "mysql": "^2.18.1",
+    "fs": "^0.0.1-security",
+    "ms": "^2.1.2",
+    "moment": "^2.27.0",
+    "http": "^0.0.1-security",
+    "ascii-table": "^0.0.9"
+  }
+}
