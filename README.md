@@ -15,14 +15,7 @@ Du skal have [Node.js](https://nodejs.org/) for at kunne køre de følgende komm
 Åben et [Powershell](https://www.partitionwizard.com/clone-disk/windows-open-powershell-in-a-folder.html) vindue i folderen og skriv følgende:
 
 ```sh
-npm i discord.js@11.5.1
-npm i ascii-table
-npm i fs
-npm i ms
-npm i http
-npm i mysql
-npm i moment
-npm i common-tags
+npm i
 ```
 
 ### Botconfig
