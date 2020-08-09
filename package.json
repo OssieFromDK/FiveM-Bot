@@ -19,12 +19,13 @@
   "author": "Ossie#4046",
   "license": "ISC",
   "dependencies": {
+    "ascii-table": "^0.0.9",
+    "common-tags": "^1.8.0",
     "discord.js": "^11.5.1",
-    "mysql": "^2.18.1",
     "fs": "^0.0.1-security",
-    "ms": "^2.1.2",
-    "moment": "^2.27.0",
     "http": "^0.0.1-security",
-    "ascii-table": "^0.0.9"
+    "moment": "^2.27.0",
+    "ms": "^2.1.2",
+    "mysql": "^2.18.1"
   }
 }
