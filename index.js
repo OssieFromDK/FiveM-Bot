@@ -18,7 +18,7 @@ const { stripIndents } = require("common-tags");
 const prefix = botconfig.prefix
 
 
-const bot = new Discord.Client({
+const bot = new Client({
     disableEveryone: true
 });
 
@@ -33,47 +33,48 @@ bot.on('ready', () => {
 
     try{
 
-    http.get(`http://${botconfig.serverip}/players.json`, function(response){
-        let json = ""
+        http.get(`http://${botconfig.serverip}/players.json`, function(response){
+            let json = ""
         
     
-        response.on("data", function(chunk){
-            json += chunk
+            response.on("data", function(chunk){
+                json += chunk
+            })
+        
+    
+            response.on("end", function(){
+                if(response.statusCode == 200){
+                    try {
+    
+                        const players = JSON.parse(json)
+
+
+                        let memberCount = bot.guilds.get(botconfig.serverid).members.filter(m => !m.user.bot).size - 1;
+
+                        const activities_list = [
+                            ``,
+                            `Brug for hjælp? !hjælp`,
+                            `${players.length}/64 online`,
+                            `${memberCount} medlemmer på ${botconfig.servernavn}`
+                        ];
+
+                        console.log(`${botconfig.servernavn}-bot er online!`);
+
+                        setInterval(() => {
+                            const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); 
+                            bot.user.setActivity(activities_list[index], {
+                            type: 'WATCHING'
+                        })
+        
+                    }, 10000);
+                }catch(e){
+                    console.log(e)
+                }
+            }
         })
-        
-    
-        response.on("end", function(){
-            if(response.statusCode == 200){
-                try {
-    
-                    const players = JSON.parse(json)
-
-
-    let memberCount = bot.guilds.get(botconfig.serverid).members.filter(m => !m.user.bot).size - 1;
-
-    const activities_list = [
-        ``,
-        `Brug for hjælp? !hjælp`,
-        `${players.length}/64 online`,
-        `${memberCount} medlemmer på ${botconfig.servernavn}`
-        ];
-
-    console.log(`${botconfig.servernavn}-bot er online!`);
-    setInterval(() => {
-        const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); 
-        bot.user.setActivity(activities_list[index], {
-            type: 'WATCHING'
-        })
-        
-    }, 10000);
-}catch(e){
-    console.log(e)
-}
-}
-})
-})
+    })
 }catch(e) {
-console.log(e)
+    console.log(e)
 }
 });
 

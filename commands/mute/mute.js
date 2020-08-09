@@ -1,5 +1,4 @@
-const botconfig = require("./botconfig.json");
-const ms = require("ms");
+const botconfig = require("../../botconfig.json");const ms = require("ms");
 
 module.exports = {
     name: "mute",

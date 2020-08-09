@@ -1,5 +1,4 @@
-const botconfig = require("./botconfig.json");
-
+const botconfig = require("../../botconfig.json");
 module.exports = {
     name: "server",
     category: "server",
